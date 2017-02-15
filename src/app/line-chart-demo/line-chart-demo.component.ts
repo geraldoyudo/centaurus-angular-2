@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-line-chart-demo-component',
-  templateUrl: './line-chart-demo-component.component.html',
-  styleUrls: ['./line-chart-demo-component.component.css']
+  selector: 'app-line-chart-demo',
+  templateUrl: './line-chart-demo.component.html',
+  styleUrls: ['./line-chart-demo.component.css']
 })
 export class LineChartDemoComponent {
   // lineChart
