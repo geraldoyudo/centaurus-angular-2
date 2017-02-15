@@ -7,15 +7,21 @@ import { AppComponent } from './app.component';
 
 import { AlertModule } from 'ng2-bootstrap';
 
+import { ChartsModule } from 'ng2-charts';
+
+import { LineChartDemoComponent} from './line-chart-demo-component/line-chart-demo-component.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LineChartDemoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
