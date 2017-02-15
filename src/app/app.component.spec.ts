@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,8 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
+      declarations: [ AppComponent ],
+      schemas:      [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
@@ -24,5 +25,21 @@ describe('AppComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  }); 
+
+  it('should have sidebar-nav', () =>{
+    shouldHaveElementWithCssSelector("#sidebar-nav");
   });
+
+  it('should have header-navbar', () =>{
+    shouldHaveElementWithCssSelector("#header-nav");
+  });
+
+  it('should have content-wrapper', () =>{
+    shouldHaveElementWithCssSelector("#content-wrapper");
+  });
+  
+  function shouldHaveElementWithCssSelector(cssSelector){
+    expect(fixture.debugElement.query(By.css(cssSelector))).toBeTruthy();
+  }
 });
