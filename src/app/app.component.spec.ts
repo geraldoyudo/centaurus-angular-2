@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { SideNavigationComponent } from './side-navigation/side-navigation.component';
+import { DashboardComponent} from './dashboard/dashboard.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -11,7 +13,7 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent ],
+      declarations: [ AppComponent, SideNavigationComponent, DashboardComponent ],
       schemas:      [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
@@ -39,7 +41,12 @@ describe('AppComponent', () => {
     shouldHaveElementWithCssSelector("#content-wrapper");
   });
   
+
   function shouldHaveElementWithCssSelector(cssSelector){
     expect(fixture.debugElement.query(By.css(cssSelector))).toBeTruthy();
+  }
+
+  function elementWithCssSelectorShouldContain(cssSelector, text){
+    expect(fixture.debugElement.query(By.css(cssSelector)).nativeElement.textContent).toContain(text);
   }
 });
