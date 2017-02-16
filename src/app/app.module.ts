@@ -9,6 +9,7 @@ import { SideNavigationComponent } from './side-navigation/side-navigation.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { Location} from '@angular/common';
+import { AccordionModule } from 'ng2-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Location} from '@angular/common';
   ],
   imports: [
     SetupModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

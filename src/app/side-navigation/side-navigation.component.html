@@ -7,10 +7,24 @@
         </a>
       </li>
       <li  [routerLinkActive]="['active']">
-        <a routerLink="/users" >
-          	<i class="fa fa-users"></i>
-						<span>Users</span>
-        </a>				
+       <a href="#" class="dropdown-toggle">
+          <i class="fa fa-users"></i>
+          <span>Users</span>
+          <i class="fa fa-chevron-circle-right drop-icon"></i>
+        </a>
+        <ul class="submenu">
+          <li>
+            <a routerLink="/users">
+              User list
+            </a>
+          </li>
+          <li>
+            <a href="user-profile.html">
+              User profile
+            </a>
+          </li>
+        </ul>
+        	
       </li>
     </ul>
   </div>
